@@ -15,22 +15,22 @@ function computerPlay() {
     return randomNum === 1 ? 'rock' :randomNum === 2 ? 'paper' : 'scissors'
 }
 // a single round of the game , with player and computer selection
-function round(playerSelection, computerSelection) {
+function playRound(playerSelection, computerSelection) {
     var computerSelection = computerPlay();
     //if comp wins, return the message
     if(computerSelection == 'rock' && playerSelection == 'scissors'){
-        return `You lose! ${computerSelection} beats ${playerSelection}`
+        return `You lose! Computer's ${computerSelection} beats your ${playerSelection}`
     }
     if(computerSelection == 'paper' && playerSelection == 'rock'){
-        return `You lose! ${computerSelection} beats ${playerSelection}`
+        return `You lose! Computer's ${computerSelection} beats your ${playerSelection}`
     }
     if(computerSelection == 'scissors' && playerSelection == 'paper'){
-        return `You lose! ${computerSelection} beats ${playerSelection}`
+        return `You lose! Computer's ${computerSelection} beats your ${playerSelection}`
     }
     if(computerSelection === playerSelection) {
-        return `Draw`
+        return `Draw. Your selection, ${playerSelection} is the same as ${computerSelection}'s selection.`
     }
-    return `You win, ${playerSelection} beats ${computerSelection}`
+    return `You win, your move, ${playerSelection} beats Computers's ${computerSelection}`
 }
 
 </script>
