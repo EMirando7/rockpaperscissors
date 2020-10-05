@@ -12,11 +12,11 @@
 //randomly return rock, paper, or scissors
 function computerPlay() {
     let randomNum = Math.floor(Math.random() * 3) + 1; // returns 1 - 3
-    return randomNum === 1 ? 'rock' || randomNum === 2 ? 'paper' : 'scissors';
+    return randomNum === 1 ? 'rock' :randomNum === 2 ? 'paper' : 'scissors'
 }
 // a single round of the game , with player and computer selection
 function round(playerSelection, computerSelection) {
-    const computerSelection = computerPlay();
+    var computerSelection = computerPlay();
     //if comp wins, return the message
     if(computerSelection == 'rock' && playerSelection == 'scissors'){
         return `You lose! ${computerSelection} beats ${playerSelection}`
