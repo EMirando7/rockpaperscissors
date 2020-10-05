@@ -33,6 +33,15 @@ function playRound(playerSelection, computerSelection) {
     return `You win, your move, ${playerSelection} beats Computers's ${computerSelection}`
 }
 
+
+//func to where to store a looped playRound 5 times
+function game() {
+    //write loop
+    for(let i = 1; i < 6; i ++){ //if i is 6, it's not less than 6, so it runs 1-5, correct
+        //each iteration runs playRound and logs into console
+        console.log(playRound());
+    }
+}
 </script>
 </body>
 </html>
