@@ -15,22 +15,27 @@ function computerPlay() {
     return randomNum === 1 ? 'rock' :randomNum === 2 ? 'paper' : 'scissors'
 }
 // a single round of the game , with player and computer selection
-function playRound(playerSelection, computerSelection) {
-    var computerSelection = computerPlay();
+
+//better yet, instead of adding parameters to playRound(),
+//  I can declare vars that hold the result of the computer and player's moves and use those,
+//  the need to be dynamic in the parameters isn't needed
+function playRound() {
+    var computerSelection = computerPlay(); // <-- declared
+    var playerSelection = prompt('What is your move?');
     //if comp wins, return the message
     if(computerSelection == 'rock' && playerSelection == 'scissors'){
-        return `You lose! Computer's ${computerSelection} beats your ${playerSelection}`
+        return `You lose! Computer's ${computerSelection}, beats your ${playerSelection}`
     }
     if(computerSelection == 'paper' && playerSelection == 'rock'){
-        return `You lose! Computer's ${computerSelection} beats your ${playerSelection}`
+        return `You lose! Computer's ${computerSelection}, beats your ${playerSelection}`
     }
     if(computerSelection == 'scissors' && playerSelection == 'paper'){
-        return `You lose! Computer's ${computerSelection} beats your ${playerSelection}`
+        return `You lose! Computer's ${computerSelection}, beats your ${playerSelection}`
     }
     if(computerSelection === playerSelection) {
-        return `Draw. Your selection, ${playerSelection} is the same as ${computerSelection}'s selection.`
+        return `Draw. Your selection, ${playerSelection}, is the same as ${computerSelection}'s selection.`
     }
-    return `You win, your move, ${playerSelection} beats Computers's ${computerSelection}`
+    return `You win, your move, ${playerSelection}, beats Computers's ${computerSelection}`
 }
 
 
