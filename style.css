@@ -1,0 +1,25 @@
+html {
+    background: black;
+}
+
+
+.btn-container {
+    position: relative;
+    left: 46%;
+    top: 50vh;
+
+}
+
+.btn {
+    height: 66px;
+    width: 200px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: larger;
+    border-radius: 9px;
+    margin-right: 8px;
+}
+
+.clicked {
+    border-color: blue;
+    box-shadow: 0 0 5px yellow;
+}
