@@ -1,11 +1,11 @@
-html {
+/* html {
     background: black;
-}
+} */
 
 
 .btn-container {
     position: relative;
-    left: 46%;
+    left: 400px;
     top: 50vh;
 
 }
@@ -20,6 +20,16 @@ html {
 }
 
 .clicked {
-    border-color: blue;
-    box-shadow: 0 0 5px yellow;
+    border: red 0.5rem solid;
+    box-shadow: 0 0 30px yellow;
 }
+
+.player {
+    position: relative;
+    top: 200px; 
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 30px;;
+}
+
+

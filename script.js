@@ -2,7 +2,7 @@
 //randomly return rock, paper, or scissors
 function computerPlay() {
     let randomNum = Math.floor(Math.random() * 3) + 1; // returns 1 - 3
-    return randomNum === 1 ? 'rock' :randomNum === 2 ? 'paper' : 'scissors'
+    return randomNum === 1 ? 'Rock' :randomNum === 2 ? 'Paper' : 'Scissors'
 }
 // a single round of the game , with player and computer selection
 
@@ -39,10 +39,44 @@ function game() {
 }
 
 
-//eventlistener
-const btns = document.querySelectorAll('.btn')
-btns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        e.target.classList.add('clicked')
+function startGame(){
+    // let computerSelection = computerPlay();
+    let computerSelection = 'Paper';
+    const btns = document.querySelectorAll('.btn')
+    btns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+
+            const playerSelection = e.target;
+            playerSelection.classList.add('clicked');
+            if(computerSelection == 'Rock' && playerSelection.textContent === 'Scissors'){
+                const loseCase1 = document.createElement('p');
+                loseCase1.textContent = `You lose! Computer's ${computerSelection}, beats your ${playerSelection.textContent}.`
+                document.body.appendChild(loseCase1);
+                return
+            }
+
+            if(computerSelection === 'Paper' && playerSelection.textContent == 'Rock'){
+                const loseCase2 = document.createElement('p');
+                loseCase2.textContent = `You lose! Computer's ${computerSelection}, beats your ${playerSelection.textContent}.`
+                document.body.appendChild(loseCase2);
+                return
+            }
+            if(computerSelection == 'Scissors' && playerSelection.textContent == 'Paper'){
+                const loseCase3 = document.createElement('p');
+                loseCase3.textContent = `You lose! Computer's ${computerSelection}, beats your ${playerSelection.textContent}`
+                document.body.appendChild(loseCase3);
+                return
+            }
+            if(computerSelection === playerSelection.textContent) {
+                const drawCase = document.createElement('p');
+                drawCase.textContent =`Draw. Your selection, ${playerSelection.textContent}, is the same as ${computerSelection}'s selection.`
+                document.body.appendChild(drawCase);
+                return
+            }
+            const winCase = document.createElement('p');
+            winCase.textContent = `You win, your move, ${playerSelection.textContent}, beats Computers's ${computerSelection}.`
+            document.body.appendChild(winCase);
+
+        })
     })
-})
+}
