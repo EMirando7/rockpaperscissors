@@ -15,6 +15,8 @@ function startGame(){
                     const loseCase1 = document.createElement('p');
                     loseCase1.textContent = `You lose! Computer's ${computerSelection}, beats your ${playerSelection.textContent}.`
                     document.body.appendChild(loseCase1);
+                    document.body.appendChild(computerButton)
+                    computerButton.textContent = `Computer's move: ${computerSelection}`;
                     btn.addEventListener('mouseleave', () => {
                         btn.classList.remove('clicked')});
                     btn.removeEventListener('click', initiate);
@@ -26,6 +28,8 @@ function startGame(){
                     const loseCase2 = document.createElement('p');
                     loseCase2.textContent = `You lose! Computer's ${computerSelection}, beats your ${playerSelection.textContent}.`
                     document.body.appendChild(loseCase2);
+                    document.body.appendChild(computerButton)
+                    computerButton.textContent = `Computer's move: ${computerSelection}`;
                     btn.addEventListener('mouseleave', () => {
                         btn.classList.remove('clicked')});
                     btn.removeEventListener('click', initiate);
@@ -37,6 +41,8 @@ function startGame(){
                     const loseCase3 = document.createElement('p');
                     loseCase3.textContent = `You lose! Computer's ${computerSelection}, beats your ${playerSelection.textContent}`
                     document.body.appendChild(loseCase3);
+                    document.body.appendChild(computerButton)
+                    computerButton.textContent = `Computer's move: ${computerSelection}`;
                     btn.addEventListener('mouseleave', () => {
                         btn.classList.remove('clicked')});
                     btn.removeEventListener('click', initiate);
@@ -48,17 +54,23 @@ function startGame(){
                     const drawCase = document.createElement('p');
                     drawCase.textContent =`Draw. Your selection, ${playerSelection.textContent}, is the same as ${computerSelection}'s selection.`
                     document.body.appendChild(drawCase);
+                    document.body.appendChild(computerButton)
+                    computerButton.textContent = `Computer's move: ${computerSelection}`;
                     btn.addEventListener('mouseleave', () => {
                         btn.classList.remove('clicked')});
                     btn.removeEventListener('click', initiate);
                     gameCheck++
                     return
-                }
-            }    
+                }  
                 const winCase = document.createElement('p');
                 winCase.textContent = `You win, your move, ${playerSelection.textContent}, beats Computers's ${computerSelection}.`
                 document.body.appendChild(winCase);
-
+                document.body.appendChild(computerButton)
+                computerButton.textContent = `Computer's move: ${computerSelection}`;
+            }
         })
     })
 }
+const btnContainer = document.querySelector('.btn-container');
+const computerButton = document.createElement('button');
+computerButton.classList.add('compButton')

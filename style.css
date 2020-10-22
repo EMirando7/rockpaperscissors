@@ -1,12 +1,13 @@
-/* html {
+html {
     background: black;
-} */
+    color: white;
+}
 
 
 .btn-container {
     position: relative;
     left: 400px;
-    top: 50vh;
+    top: 40vh;
 
 }
 
@@ -33,3 +34,13 @@
 }
 
 
+.compButton {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 66px;
+    width: 200px;
+    font-size: 15px;
+    border-radius: 9px;
+    left: 600px; /* blaze it*/
+    top: 80px;
+    position: relative
+}
